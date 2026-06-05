@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Docente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4 relative">
+    <a href="/admin/docentes"
+        class="absolute top-6 right-6 bg-gray-700 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition">
+        Volver
+    </a>
+
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
+
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">
+            Registrar Nuevo Docente
+        </h1>
+
+        {{#successMessage}}
+        <div class="bg-green-100 border border-green-300 text-green-800 p-4 rounded mb-4">
+            {{successMessage}}
+        </div>
+        {{/successMessage}}
+
+        {{#errorMessage}}
+        <div class="bg-red-100 border border-red-300 text-red-800 p-4 rounded mb-4">
+            {{errorMessage}}
+        </div>
+        {{/errorMessage}}
+
+        <form action="/docente/new" method="post" class="space-y-4">
+
+            <!-- DNI -->
+            <div>
+                <label for="dni" class="block text-gray-700 font-medium">
+                    DNI
+                </label>
+
+                <input
+                    type="text"
+                    id="dni"
+                    name="dni"
+                    required
+                    class="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-400"
+                >
+            </div>
+
+            <!-- Nombre -->
+            <div>
+                <label for="nombre" class="block text-gray-700 font-medium">
+                    Nombre
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    required
+                    class="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-400"
+                >
+            </div>
+
+            <!-- Apellido -->
+            <div>
+                <label for="apellido" class="block text-gray-700 font-medium">
+                    Apellido
+                </label>
+
+                <input
+                    type="text"
+                    id="apellido"
+                    name="apellido"
+                    required
+                    class="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-400"
+                >
+            </div>
+
+            <!-- Fecha nacimiento -->
+            <div>
+                <label for="fecha_nacimiento" class="block text-gray-700 font-medium">
+                    Fecha de nacimiento
+                </label>
+
+                <input
+                    type="date"
+                    id="fecha_nacimiento"
+                    name="fecha_nacimiento"
+                    required
+                    class="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-400"
+                >
+            </div>
+
+            <!-- Telefono -->
+            <div>
+                <label for="telefono" class="block text-gray-700 font-medium">
+                    Teléfono
+                </label>
+
+                <input
+                    type="text"
+                    id="telefono"
+                    name="telefono"
+                    required
+                    class="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-400"
+                >
+            </div>
+
+            <!-- Direccion -->
+            <div>
+                <label for="direccion" class="block text-gray-700 font-medium">
+                    Dirección
+                </label>
+
+                <input
+                    type="text"
+                    id="direccion"
+                    name="direccion"
+                    required
+                    class="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-400"
+                >
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="email" class="block text-gray-700 font-medium">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-400"
+                >
+            </div>
+
+            <!-- Username asociado -->
+            <div>
+                <label for="username" class="block text-gray-700 font-medium">
+                    Usuario asociado
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Nombre de usuario ya existente"
+                    required
+                    class="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-400"
+                >
+            </div>
+
+            <button
+                type="submit"
+                class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition duration-300 font-semibold"
+            >
+                Registrar Docente
+            </button>
+
+        </form>
+
+        <div class="text-center mt-6">
+            <a href="/dashboard" class="text-blue-600 hover:underline font-semibold">
+                Cancelar
+            </a>
+        </div>
+    </div>    
+</body>
+</html>

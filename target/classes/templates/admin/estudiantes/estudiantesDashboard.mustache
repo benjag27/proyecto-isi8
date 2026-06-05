@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administración de Estudiantes</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6">
+
+<div class="max-w-7xl mx-auto">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center mb-8">
+
+        <div>
+            <h1 class="text-4xl font-bold text-red-700">
+                Administración de Estudiantes
+            </h1>
+
+            <p class="text-gray-600 mt-2">
+                Gestiona estudiantes del sistema.
+            </p>
+        </div>
+
+        <a href="/admin"
+           class="bg-gray-700 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition">
+            Volver
+        </a>
+
+    </div>
+
+    <!-- MENSAJES -->
+    {{#successMessage}}
+    <div class="bg-green-100 border border-green-300 text-green-800 p-4 rounded mb-6">
+        {{successMessage}}
+    </div>
+    {{/successMessage}}
+
+    {{#errorMessage}}
+    <div class="bg-red-100 border border-red-300 text-red-800 p-4 rounded mb-6">
+        {{errorMessage}}
+    </div>
+    {{/errorMessage}}
+
+    <!-- ACCIONES CRUD -->
+    <div class="flex flex-wrap gap-3 mb-8">
+
+        
+        <a href="/admin/estudiantes/agregar"
+           class="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition font-semibold">
+            Registrar Estudiante
+        </a>
+
+        <!-- LEER -->
+        <a href="/admin/estudiantes/listado"
+        target="_blank"
+        class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition font-semibold">
+            Vista Detallada
+        </a>
+
+    </div>
+
+    <!-- TABLA -->
+    <div id="listado-estudiantes" class="bg-white rounded-2xl shadow-md border border-gray-200 p-6">
+        <div class="flex justify-between items-center mb-6">
+
+            <h2 class="text-2xl font-bold text-gray-800">
+                Listado de Estudiantes
+            </h2>
+
+        </div>
+
+        <div class="overflow-x-auto">
+
+            <table class="min-w-full border border-gray-200">
+
+                <thead class="bg-gray-100">
+
+                    <tr>
+                        <th class="p-3 border">ID</th>
+                        <th class="p-3 border">DNI</th>
+                        <th class="p-3 border">Nombre</th>
+                        <th class="p-3 border">Apellido</th>
+                        <th class="p-3 border">Email</th>
+                        <th class="p-3 border">Usuario</th>
+                        <th class="p-3 border">Acciones</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <!-- FUTURO CRUD -->
+
+                    {{#estudiantes}}
+                    <tr class="hover:bg-gray-50">
+
+                        <td class="p-3 border text-center">
+                            {{id}}
+                        </td>
+
+                        <td class="p-3 border text-center">
+                            {{dni}}
+                        </td>
+
+                        <td class="p-3 border text-center">
+                            {{nombre}}
+                        </td>
+
+                        <td class="p-3 border text-center">
+                            {{apellido}}
+                        </td>
+
+                        <td class="p-3 border text-center">
+                            {{email}}
+                        </td>
+
+                        <td class="p-3 border text-center">
+                            {{username}}
+                        </td>
+
+                        <td class="p-3 border text-center">
+
+                            <div class="flex justify-center gap-2">
+                                <a href="/admin/estudiantes/{{id}}/edit"
+                                class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 transition">
+                                    Editar
+                                </a>
+
+                                <a href="/admin/estudiantes/{{id}}/delete"
+                                class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm">
+                                    Eliminar
+                                </a>
+                            </div>
+
+                        </td>
+
+                    </tr>
+                    {{/estudiantes}}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

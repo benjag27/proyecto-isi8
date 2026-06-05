@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-4xl font-bold text-gray-800">
+                    Administración
+                </h1>
+
+                <p class="text-gray-600 mt-2">
+                    Gestiona los módulos principales del sistema.
+                </p>
+            </div>
+
+            <a href="/dashboard"
+               class="bg-gray-700 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition">
+                Volver
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+            {{> partials/crudCard }}
+
+        </div>
+
+    </div>
+
+</body>
+</html>

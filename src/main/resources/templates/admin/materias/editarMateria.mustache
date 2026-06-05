@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Materia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+<div class="max-w-4xl mx-auto">
+
+    <div class="flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-bold text-yellow-600">Editar Materia</h1>
+        <a href="/admin/materias" class="bg-gray-700 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition">
+            Volver
+        </a>
+    </div>
+
+    {{#errorMessage}}
+    <div class="bg-red-100 border border-red-300 text-red-800 p-4 rounded mb-6">{{errorMessage}}</div>
+    {{/errorMessage}}
+
+    <div class="bg-white p-8 rounded-2xl shadow-md">
+        <form action="/admin/materias/{{codMateria}}/edit" method="POST" class="space-y-4">
+            <div>
+                <label class="block text-gray-700 font-semibold mb-2">Nombre *</label>
+                <input type="text" name="nombre" value="{{nombre}}"
+                       class="w-full border border-gray-300 rounded-lg p-2" required>
+            </div>
+            <div>
+                <label class="block text-gray-700 font-semibold mb-2">Descripción</label>
+                <textarea name="descripcion" rows="3"
+                          class="w-full border border-gray-300 rounded-lg p-2">{{descripcion}}</textarea>
+            </div>
+            <div>
+                <label class="block text-gray-700 font-semibold mb-2">Plan de Estudios *</label>
+                <select name="cod_plan" class="w-full border border-gray-300 rounded-lg p-2" required>
+                    {{#planes}}
+                    <option value="{{codPlan}}" {{#selected}}selected{{/selected}}>{{nombrePlan}}</option>
+                    {{/planes}}
+                </select>
+            </div>
+            <button type="submit"
+                    class="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition font-semibold">
+                Guardar Cambios
+            </button>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

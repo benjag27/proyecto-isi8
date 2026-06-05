@@ -1,0 +1,4 @@
+CRUD Estudiantes me llevó 4:00hs
+CRUD Materias 2:30hs
+
+Actualizacion del Digrama UML: 30 Min

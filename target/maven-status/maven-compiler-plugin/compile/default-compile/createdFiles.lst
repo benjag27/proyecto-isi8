@@ -1,0 +1,13 @@
+com/is1/proyecto/models/Materia.class
+com/is1/proyecto/config/DBConfigSingleton.class
+com/is1/proyecto/models/Persona.class
+com/is1/proyecto/models/ExamenFinal.class
+com/is1/proyecto/models/Carrera.class
+com/is1/proyecto/models/Docente.class
+com/is1/proyecto/App.class
+com/is1/proyecto/models/User.class
+com/is1/proyecto/models/Admin.class
+com/is1/proyecto/models/Rol.class
+com/is1/proyecto/models/Estudiante.class
+com/is1/proyecto/models/PeriodoAcademico.class
+com/is1/proyecto/models/PlanDeEstudios.class

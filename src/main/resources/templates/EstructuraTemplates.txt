@@ -1,0 +1,33 @@
+src/main/resources/templates/
+├── ...
+├── dashboard.mustache                         (MODIFICADO)
+│
+├── admin/
+│   ├── adminDashboard.mustache                (NUEVO)
+│   │
+│   ├── partials/
+│   │   ├── crudCard.mustache                  (NUEVO)
+│   │   └── crudActions.mustache               (NUEVO)
+│   │
+│   ├── materias/
+│   │   └── materiasDashboard.mustache         (NUEVO)
+│   │
+│   ├── carreras/
+│   │   └── carrerasDashboard.mustache         (NUEVO)
+│   │
+│   ├── docentes/
+│   │   ├── docentesDashboard.mustache         (NUEVO)
+│   │   ├── agregarDocente.mustache            (NUEVO)
+│   │   ├── editarDocente.mustache             (NUEVO)
+│   │   ├── eliminarDocente.mustache           (NUEVO)
+│   │   └── listadoDocentes.mustache           (NUEVO)
+│   │
+│   ├── planes/
+│   │   └── planesDashboard.mustache           (NUEVO)
+│   │
+│   └── estudiantes/
+│       ├── estudiantesDashboard.mustache      (NUEVO)
+│       ├── agregarEstudiante.mustache         (NUEVO)
+│       ├── editarEstudiante.mustache          (NUEVO)
+│       ├── eliminarEstudiante.mustache        (NUEVO)
+│       └── listadoEstudiantes.mustache        (NUEVO)

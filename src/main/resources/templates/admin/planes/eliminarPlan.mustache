@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">Eliminar Plan de Estudio</h1>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6 space-y-2">
+            <p><span class="font-medium text-gray-600">Código:</span> {{codPlan}}</p>
+            <p><span class="font-medium text-gray-600">Año:</span> {{anio}}</p>
+            <p><span class="font-medium text-gray-600">Vigencia:</span> {{vigencia}}</p>
+            <p><span class="font-medium text-gray-600">Carrera:</span> {{nombreCarrera}}</p>
+        </div>
+
+        {{#tieneMaterias}}
+        <div class="bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 py-3 rounded mb-4">
+            Este plan tiene materias asociadas que también serán eliminadas.
+        </div>
+        <ul class="mb-4 list-disc list-inside text-gray-700 text-sm">
+            {{#materias}}
+            <li>{{nombre}}</li>
+            {{/materias}}
+        </ul>
+        {{/tieneMaterias}}
+
+        <p class="text-gray-700 mb-6">¿Estás seguro que querés eliminar este plan? Esta acción no se puede deshacer.</p>
+
+        <form method="post" action="/admin/planes/{{codPlan}}/delete" class="flex gap-3">
+            <button type="submit"
+                    class="bg-red-600 text-white py-2 px-6 rounded-md hover:bg-red-700 transition">
+                Confirmar Eliminación
+            </button>
+            <a href="/admin/planes"
+               class="bg-gray-200 text-gray-700 py-2 px-6 rounded-md hover:bg-gray-300 transition">
+                Cancelar
+            </a>
+        </form>
+
+    </div>
+</body>
+</html>

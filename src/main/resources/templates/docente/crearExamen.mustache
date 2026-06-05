@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Examen Final</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+
+    <div class="max-w-xl mx-auto">
+
+        <div class="flex items-center justify-between mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">Crear Examen Final</h1>
+            <a href="/docente/examenes" class="text-sm text-gray-500 hover:text-gray-700">← Volver</a>
+        </div>
+
+        {{#errorMessage}}
+        <div class="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+            {{errorMessage}}
+        </div>
+        {{/errorMessage}}
+
+        <div class="bg-white rounded-lg shadow p-6">
+            <form method="POST" action="/docente/examenes/crear">
+
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Materia</label>
+                    <select name="cod_materia" required
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <option value="">-- Seleccioná una materia --</option>
+                        {{#materias}}
+                        <option value="{{cod_materia}}">{{nombre}}</option>
+                        {{/materias}}
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Fecha del examen</label>
+                    <input type="date" name="fecha" required
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Horario</label>
+                    <input type="time" name="horario" required
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Aula</label>
+                    <input type="text" name="aula" placeholder="Ej: Aula 5, Lab 2..." required
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Observaciones (opcional)</label>
+                    <textarea name="observaciones" rows="3" placeholder="Ej: Traer calculadora, habilitado libro..."
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition font-semibold">
+                    Crear Examen
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

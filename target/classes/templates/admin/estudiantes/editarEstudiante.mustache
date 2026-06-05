@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Estudiante</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6">
+
+<div class="max-w-4xl mx-auto">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center mb-8">
+
+        <div>
+
+            <h1 class="text-3xl font-bold text-yellow-600">
+                Editar Estudiante
+            </h1>
+
+            <p class="text-gray-600 mt-2">
+                Modifique los datos del estudiante.
+            </p>
+
+        </div>
+
+        <a href="/admin/estudiantes"
+           class="bg-gray-700 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition">
+            Volver
+        </a>
+
+    </div>
+
+    <!-- FORM -->
+    <div class="bg-white p-8 rounded-2xl shadow-md">
+
+        <form
+                action="/admin/estudiantes/{{nro_legajo}}/edit"
+                method="POST"
+                class="space-y-4">
+
+            <!-- NUMERO DE LEGAJO -->
+            <div>
+
+                <label class="block text-gray-700 font-semibold mb-2">
+                    Numero Legajo
+                </label>
+
+                <input
+                        type="text"
+                        value="{{nro_legajo}}"
+                        readonly
+                        class="w-full border border-gray-300 rounded-lg p-2 bg-gray-100">
+
+            </div>
+
+            <!-- DNI -->
+            <div>
+
+                <label class="block text-gray-700 font-semibold mb-2">
+                    DNI
+                </label>
+
+                <input
+                        type="text"
+                        value="{{dni}}"
+                        readonly
+                        class="w-full border border-gray-300 rounded-lg p-2 bg-gray-100">
+
+            </div>
+
+            <!-- NOMBRE -->
+            <div>
+
+                <label class="block text-gray-700 font-semibold mb-2">
+                    Nombre
+                </label>
+
+                <input
+                        type="text"
+                        name="nombre"
+                        value="{{nombre}}"
+                        required
+                        class="w-full border border-gray-300 rounded-lg p-2">
+
+            </div>
+
+            <!-- APELLIDO -->
+            <div>
+
+                <label class="block text-gray-700 font-semibold mb-2">
+                    Apellido
+                </label>
+
+                <input
+                        type="text"
+                        name="apellido"
+                        value="{{apellido}}"
+                        required
+                        class="w-full border border-gray-300 rounded-lg p-2">
+
+            </div>
+
+            <!-- FECHA -->
+            <div>
+
+                <label class="block text-gray-700 font-semibold mb-2">
+                    Fecha de nacimiento
+                </label>
+
+                <input
+                        type="date"
+                        name="fecha_nacimiento"
+                        value="{{fechaNacimiento}}"
+                        required
+                        class="w-full border border-gray-300 rounded-lg p-2">
+
+            </div>
+
+            <!-- TELEFONO -->
+            <div>
+
+                <label class="block text-gray-700 font-semibold mb-2">
+                    Teléfono
+                </label>
+
+                <input
+                        type="text"
+                        name="telefono"
+                        value="{{telefono}}"
+                        required
+                        class="w-full border border-gray-300 rounded-lg p-2">
+
+            </div>
+
+            <!-- DIRECCION -->
+            <div>
+
+                <label class="block text-gray-700 font-semibold mb-2">
+                    Dirección
+                </label>
+
+                <input
+                        type="text"
+                        name="direccion"
+                        value="{{direccion}}"
+                        required
+                        class="w-full border border-gray-300 rounded-lg p-2">
+
+            </div>
+
+            <!-- EMAIL -->
+            <div>
+
+                <label class="block text-gray-700 font-semibold mb-2">
+                    Email
+                </label>
+
+                <input
+                        type="email"
+                        name="email"
+                        value="{{email}}"
+                        required
+                        class="w-full border border-gray-300 rounded-lg p-2">
+
+            </div>
+
+            <!-- BOTON -->
+            <button
+                    type="submit"
+                    class="bg-yellow-500 text-white px-6 py-2 rounded-lg
+                           hover:bg-yellow-600 transition font-semibold">
+
+                Guardar Cambios
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

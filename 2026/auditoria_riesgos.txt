@@ -1,0 +1,110 @@
+AUDITORIA DE RIESGOS - PROYECTO INTEGRADOR ING. SOFTWARE II
+
+Analisis Realizado por la LLM:
+
+  ------------------
+  RIESGOS TECNICOS
+  ------------------
+
+1.  Integracion con JDBC Probabilidad: Alta Impacto: Alto Descripcion:
+    Manejo manual de base de datos, mayor complejidad y errores.
+
+2.  Arquitectura (Spark Java + Mustache) Probabilidad: Media Impacto:
+    Alto Descripcion: Limitaciones de escalabilidad y mantenimiento.
+
+3.  Falta de pruebas completas Probabilidad: Alta Impacto: Medio
+    Descripcion: No hay estrategia de testing definida.
+
+4.  Complejidad del dominio (gestión académica completa)
+    Probabilidad: Alta
+    Impacto: Alto
+    Motivo: Están intentando cubrir muchas funcionalidades (alumnos, docentes, planes, correlatividades, notas, inscripciones). Esto puede generar sobrecarga técnica y diseño deficiente.
+
+5.  Autenticación básica (usuario/contraseña)
+    Probabilidad: Media
+    Impacto: Alto
+    Motivo: Si no se implementa correctamente (hashing, sesiones), puede ser inseguro o fallar.
+
+  --------------------------
+  RIESGOS ORGANIZACIONALES
+  --------------------------
+
+1.  Falta de roles definidos en el equipo
+    Probabilidad: Alta
+    Impacto: Medio-Alto
+    Motivo: No se especifica quién hace qué → riesgo de solapamiento o tareas sin dueño.
+
+2.  Trabajo centrado en clase Probabilidad: Alta Impacto: Medio
+    Descripcion: Bajo tiempo efectivo de desarrollo.
+anejo manual de base de datos, mayor complejidad y errores.
+
+3.  Comunicacion informal Probabilidad: Media Impacto: Medio
+    Descripcion: Posibles malentendidos y descoordinacion.
+
+  --------------------------
+  RIESGOS DE PLANIFICACION
+  --------------------------
+
+1.  Alcance demasiado amplio Probabilidad: Alta Impacto: Alto
+    Descripcion: Sistema muy grande para un cuatrimestre, lo cual es ambicioso.
+
+2.  Pocas funcionalidades implementadas actualmente (solo “Alta profesor”)
+    Probabilidad: Alta
+    Impacto: Alto
+    Motivo: Están en etapa muy temprana para la cantidad de features planificadas.
+
+3.  Falta de backlog definido Probabilidad: Media Impacto: Alto
+    Descripcion: No hay priorizacion clara.
+
+4.  Falta de priorización de funcionalidades
+    Probabilidad: Alta
+    Impacto: Alto
+    Motivo: No está definido qué es lo mínimo necesario para aprobar.
+
+  -----------------
+  RIESGOS HUMANOS
+  -----------------
+
+1.  Diferencias de conocimiento Probabilidad: Alta Impacto: Alto
+    Descripcion: Desbalance en el equipo.
+
+2.  Dependencia de personas clave Probabilidad: Media Impacto: Alto
+    Descripcion: Riesgo si alguien no participa.
+
+3.  Falta de compromiso Probabilidad: Media Impacto: Alto Descripcion:
+    Problemas tipicos de trabajo grupal.
+
+4.  Sobrecarga academica Probabilidad: Alta Impacto: Medio Descripcion:
+    Otras materias afectan el avance.
+
+  -----------------
+  RESUMEN CRITICO
+  -----------------
+
+-   Alcance demasiado grande
+-   Falta de roles definidos
+-   Complejidad del dominio académico
+-   Poco avance inicial vs funcionalidades planeadas
+-   Falta de MVP claro
+
+Analisis Realizado por el equipo:
+
+- Mala division de tareas, de tipo Planificacion, Probabilidad Alta, Impacto Alto
+
+- Falta de tiempo por trabajos de otras materias, de tipo Planificacion, Probabilidad Media, Impacto Alto
+
+- Mala distribucion del tiempo para realizacion de las tareas, de tipo Planificacion, Probabilidad Alta, Impacto Alto
+
+- Cambio de algun requisito a mitad del proyecto, de tipo Organizacional, Probabilidad Media, Impacto Medio
+
+- Un integrante no realiza su parte del trabajo o alguna de sus tareas, de tipo Humano, Probabilidad Baja, Impacto Alto
+
+- Uso de una tecnologia la cual no se tiene conocimiento, de tipo Tecnico, Probabilidad Media, Impacto Medio
+
+Para poder resolver o minimizar su impacto de la mayoria de estos riesgos se requerira dejar en claro que, como y cuando se quiere hacer o implementar cada funcionalidad. En lo posible, dividir las tareas en microtareas para poder realizarlas durante la semana ya que el tiempo para hacerlas se disminuye y con ello podemos hacer un seguimiento del proyecto y trabajar sobre èl de manera conjunta o paralela con los demas trabajos de las demas materias.
+En cuanto a la ultimo riesgo, el utilizar tecnologias nuevas requiere estudiarlas bien y leer los manuales correspondientes para hacer un buen uso de ellas y que su uso no retrase el proyecto.
+Tambien debemos dejar bien en claro al principio que vamos a hacer, como lo vamos a hacer y para cuando debe estar listo. Ademas, debemos definir bien los roles de cada uno para facilitar el trabajo en grupo y la comunicacion con el equipo completo.
+
+Actividad 2.C
+
+Los riesgos encontrados por la IA son mas tecnicos y completos, mientras que los definidos por nosotros son màs puntuales y realistas de acuerdo al proyecto y al contexto academico. La LLM se centra en aspectos tecnicos de las tecnologias que utilizamos mientras que nosotros no los tuvimos en cuenta por falta de conocimiento.
